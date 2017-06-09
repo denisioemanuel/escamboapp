@@ -10,15 +10,17 @@ gem 'rails', '~> 5.1.1'
 #Gem de insternacionalização.
 gem 'rails-i18n'
 
-#Manage Procfile-based applications 
+#Manage Procfile-based applications
 gem 'foreman'
 #Cuida da autenticação do site
 gem 'devise'
-
 #Translations for the devise gem
 gem 'devise-i18n'
-
+##Laytou da nossa aplicação BackOffice
+gem 'bootstrap_sb_admin_base_v2'
 # Use sqlite3 as the database for Active Record
+gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
+
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -59,6 +61,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   #Gem dixa a mensagem de erro mais amigável
   gem 'better_errors'
+  #Gerar um pdf da entiddade e relacionamento da aplicação
+  gem "rails-erd"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
