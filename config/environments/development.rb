@@ -4,6 +4,9 @@ Rails.application.configure do
   ##Batter_ERRORs
   BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
 
+  #Corrigindo erro do Web console
+  config.web_console_whitelited_ips = ENV['TRUSTED_IP']
+
   ##Consegui enviar e-mail
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
