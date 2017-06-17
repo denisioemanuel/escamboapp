@@ -1,16 +1,47 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div id="page-wrapper">
+  <div class="row">
+      <div class="col-lg-12">
+          <h1 class="page-header">Forgot your password?</h1>
+      </div>
+      <!-- /.col-lg-12 -->
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+  <!-- /.row -->
+  <div class="row">
+      <div class="col-md-8">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  Basic Form Elements
+              </div>
+              <div class="panel-body">
+                  <div class="row">
+                      <div class="col-lg-6">
+                          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                              <div class="form-group has-error">
+                                <%= devise_error_messages! %>
+                              </div>
+                              <div class="form-group input-group">
+                                  <span class="input-group-addon">@</span>
+                                  <%= f.email_field :email, autofocus: true, type:"email", class:"form-control", placeholder:"E-amil"%>
+                              </div>
+                              <%= f.submit "Send me reset password instructions", class:"btn btn-default"%>
+                          <% end %>
+                      </div>
+                      <!-- /.col-lg-6 (nested) -->
+                      
+                  </div>
+                  <!-- /.row (nested) -->
+                  <div class="row">
+                      <div class="col-lg-6">
+                      	<%= render "admins/shared/links" %>
+                      </div>
+                  </div>
+                  <!-- /.row (nested) -->
+              </div>
+              <!-- /.panel-body -->
+          </div>
+          <!-- /.panel -->
+      </div>
+      <!-- /.col-lg-12 -->
   </div>
-<% end %>
-
-<%= render "admins/shared/links" %>
+  <!-- /.row -->
+</div>
