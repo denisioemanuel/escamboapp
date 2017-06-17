@@ -4,11 +4,16 @@ class Backoffice::CategoriesController < BackofficeController
   end
 
   def new
-  	
+  	@category = Category.new
   end
 
   def create
-  	
+  	@category = Category.new(params_category)
+    if @category.save
+      redirect_to backoffice_categories_path, notice: "A Categoria #{@category.description} foi salva com sucessso!"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -18,4 +23,11 @@ class Backoffice::CategoriesController < BackofficeController
   def update
   	
   end
+
+  private
+
+  def params_category
+  	params.require(:category).permit(:description)
+  end
+
 end
