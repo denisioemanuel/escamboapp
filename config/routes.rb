@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   namespace :backoffice do
     resources :categories, except: [:destroy, :show]
     get 'dashboard', to: 'dashboard#index'
+    get 'admins/index'
   end
 
   namespace :site do
@@ -10,8 +12,8 @@ Rails.application.routes.draw do
 
   get 'backoffice', to: 'backoffice/dashboard#index'
 
-  devise_for :admins
-  devise_for :members
+  devise_for :admins, :skip => [:registration]
+  devise_for :members 
   get 'home/index'
   root 'site/home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
