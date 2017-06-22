@@ -18,9 +18,11 @@ gem 'devise'
 gem 'devise-i18n'
 ##Laytou da nossa aplicação BackOffice
 gem 'bootstrap_sb_admin_base_v2'
-# Use sqlite3 as the database for Active Record
+#Bootstrap
 gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
-
+#Notify
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+# Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
