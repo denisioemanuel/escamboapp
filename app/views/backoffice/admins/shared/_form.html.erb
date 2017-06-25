@@ -1,0 +1,45 @@
+
+<h1 class="page-header">Usuário</h1>
+<% if @admin.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <ul>
+            <% @admin.errors.full_messages.each do |message| %>
+            <li>
+                <%= message %>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <%= title %>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+        <div class="col-lg-6">
+        <%= form_for([:backoffice, @admin])  do |f| %>
+            <div class="form-group">
+            	<%= f.label :email %>
+            	<%= f.text_field :email, class:"form-control", placeholder:"Ex: email@example.com" %>
+        	</div>
+            <div class="form-group">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
+            </div>
+            <div class="form-group">
+            	<%= f.submit "Salvar", class:"btn btn-default" %>
+        	</div>
+        <% end %>
+        </div>
+     </div>
+</div>
