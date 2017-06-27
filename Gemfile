@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
+
+
 ## GEMs adicionadas durente o curso ##
 #Gem de insternacionalização.
 gem 'rails-i18n'
@@ -22,6 +24,11 @@ gem 'bootstrap_sb_admin_base_v2'
 gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
 #Notify
 gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+#A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker'
+
+
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
