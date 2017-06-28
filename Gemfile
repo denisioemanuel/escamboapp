@@ -20,12 +20,17 @@ gem 'devise'
 gem 'devise-i18n'
 ##Laytou da nossa aplicação BackOffice
 gem 'bootstrap_sb_admin_base_v2'
-#Bootstrap
-gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
-#Notify
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
-#A library for generating fake data such as names, addresses, and phone numbers.
-gem 'faker'
+
+#Source do assets
+source 'https://rails-assets.org' do
+  #Bootstrap
+  gem 'rails-assets-bootstrap', '3.3.7'
+  #Notify
+  gem 'rails-assets-notifyjs'
+  #Wrappers for JavaScript alert(), confirm() and other flexible dialogs using Twitter's bootstrap framework
+  gem 'rails-assets-bootbox'
+  
+end
 
 
 
@@ -72,6 +77,8 @@ group :development do
   gem 'better_errors'
   #Gerar um pdf da entiddade e relacionamento da aplicação
   gem "rails-erd"
+  #A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
