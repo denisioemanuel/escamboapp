@@ -21,6 +21,9 @@ gem 'devise-i18n'
 ##Laytou da nossa aplicação BackOffice
 gem 'bootstrap_sb_admin_base_v2'
 
+gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
+gem 'sweet-alert2-rails'
+
 #Source do assets
 source 'https://rails-assets.org' do
   #Bootstrap

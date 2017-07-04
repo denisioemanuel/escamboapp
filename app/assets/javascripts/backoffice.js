@@ -1,34 +1,40 @@
 //= require bootstrap_sb_admin_base_v2
 //= require notifyjs
-//= require bootbox
 
-$.rails.allowAction = function(element) {
-  var message = element.attr('data-confirm');
-  console.log("LEGAL: "+ message);
-  if (!message) { return true; }
+//= require sweetalert2
+//= require sweet-alert2-rails
 
-  var opts = {
-    title: "Confirmação",
-    message: message,
-    buttons: {
-        confirm: {
-            label: 'Sim',
-            className: 'btn-success'
-        },
-        cancel: {
-            label: 'Não',
-            className: 'btn-danger'
-        }
-    },
-    callback: function(result) {
-      if (result) {
-        element.removeAttr('data-confirm');
-        element.trigger('click.rails')
-      }
-    }
-  };
+jQuery(document).ready(function($) {
+	console.log($(this).data("confirm"));	
+});
 
-  bootbox.confirm(opts);
+// $.rails.allowAction = function(element) {
+//   var message = element.attr('data-confirm');
+//   console.log("LEGAL: "+ message);
+//   if (!message) { return true; }
 
-  return false;
-}
+//   var opts = {
+//     title: "Confirmação",
+//     message: message,
+//     buttons: {
+//         confirm: {
+//             label: 'Sim',
+//             className: 'btn-success'
+//         },
+//         cancel: {
+//             label: 'Não',
+//             className: 'btn-danger'
+//         }
+//     },
+//     callback: function(result) {
+//       if (result) {
+//         element.removeAttr('data-confirm');
+//         element.trigger('click.rails')
+//       }
+//     }
+//   };
+
+//   bootbox.confirm(opts);
+
+//   return false;
+// }
