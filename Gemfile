@@ -32,6 +32,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-notifyjs'
   #Wrappers for JavaScript alert(), confirm() and other flexible dialogs using Twitter's bootstrap framework
   gem 'rails-assets-bootbox'
+
+  gem 'rails-assets-jquery-ujs'
   
 end
 

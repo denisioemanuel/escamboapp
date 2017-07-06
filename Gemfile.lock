@@ -129,6 +129,8 @@ GEM
       rails-assets-jquery (>= 1.9.1, < 4)
     rails-assets-es6-promise (4.1.1)
     rails-assets-jquery (3.2.1)
+    rails-assets-jquery-ujs (1.2.2)
+      rails-assets-jquery (> 1.8)
     rails-assets-notifyjs (0.4.2)
     rails-assets-sweetalert2 (5.1.1)
       rails-assets-es6-promise
@@ -220,6 +222,7 @@ DEPENDENCIES
   rails (~> 5.1.1)
   rails-assets-bootbox!
   rails-assets-bootstrap (= 3.3.7)!
+  rails-assets-jquery-ujs!
   rails-assets-notifyjs!
   rails-assets-sweetalert2 (~> 5.1.1)!
   rails-erd
