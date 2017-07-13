@@ -2,7 +2,8 @@ class Backoffice::AdminsController < BackofficeController
   before_action :set_admin, only:[:edit, :update, :destroy]
 
   def index
-  	@admins = Admin.all
+    # @admins = Admin.all
+  	@admins = Admin.with_full_access
   end
 
   def new
@@ -19,7 +20,7 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def edit
-  	
+
   end
 
   def update
@@ -47,7 +48,7 @@ class Backoffice::AdminsController < BackofficeController
   	end
   end
 
-  private 
+  private
 
   def get_message_success
   	"O usuário (#{@admin.email}) foi salvo com sucesso!"

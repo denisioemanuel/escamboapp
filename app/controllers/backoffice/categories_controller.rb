@@ -10,8 +10,8 @@ class Backoffice::CategoriesController < BackofficeController
   end
 
   def create
-    @category = Category.new(params_category)
-    if @category.save
+    @category = CategoryService.create(params_category)
+    unless @category.errors.any?
       redirect_to backoffice_categories_path, notice: get_message_success
     else
       render :new
@@ -19,7 +19,7 @@ class Backoffice::CategoriesController < BackofficeController
   end
 
   def edit
-    
+
   end
 
   def update
