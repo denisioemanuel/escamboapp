@@ -24,6 +24,9 @@ gem 'bootstrap_sb_admin_base_v2'
 gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
 gem 'sweet-alert2-rails'
 
+#Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
+gem 'enum_help'
+
 #Source do assets
 source 'https://rails-assets.org' do
   #Bootstrap
@@ -34,7 +37,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootbox'
 
   gem 'rails-assets-jquery-ujs'
-  
+
 end
 
 

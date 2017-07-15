@@ -1,0 +1,24 @@
+pt-BR:
+  activerecord:
+    models:
+      admin:
+        one: Usuário
+        other: Usuários
+      category:
+        one: Categoria
+        other: Categorias
+      member:
+        one: Membro
+        other: Membros
+    attributes:
+      admin:
+        name: Nome
+        email: E-mail
+        encrypted_password: Senha
+        role: Cargo
+      category:
+        description: Descrição
+      member:
+        name: Nome
+        email: E-mail
+        encrypted_password: Senha
