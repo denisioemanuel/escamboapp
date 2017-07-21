@@ -27,6 +27,9 @@ gem 'sweet-alert2-rails'
 #Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
 gem 'enum_help'
 
+#Minimal authorization through OO design and pure Ruby classes
+gem 'pundit'
+
 #Source do assets
 source 'https://rails-assets.org' do
   #Bootstrap
@@ -56,7 +59,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+#gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production

@@ -2,12 +2,13 @@ class Backoffice::AdminsController < BackofficeController
   before_action :set_admin, only:[:edit, :update, :destroy]
 
   def index
-    # @admins = Admin.all
-  	@admins = Admin.with_full_access
+    @admins = Admin.all
+  	#@admins = Admin.with_full_access
   end
 
   def new
   	@admin = Admin.new
+    authorize @admin
   end
 
   def create
@@ -24,14 +25,6 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def update
-  	passwd = params[:admin][:password]
-  	passwd_confirm = params[:admin][:password_confirmation]
-
-  	if passwd.blank? && passwd_confirm.blank?
-  		params[:admin].delete(:password)
-  		params[:admin].delete(:password_confirmation)
-  	end
-
   	if @admin.update(params_admin)
   		redirect_to backoffice_admins_path, notice: get_message_success
   	else
@@ -51,7 +44,7 @@ class Backoffice::AdminsController < BackofficeController
   private
 
   def get_message_success
-  	"O usuário (#{@admin.email}) foi salvo com sucesso!"
+  	"O usuário (#{ @admin.email }) foi salvo com sucesso!"
   end
 
   def set_admin
@@ -59,6 +52,13 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def params_admin
-  	params.require(:admin).permit(:name, :email, :password, :password_confirmation, :role)
+    passwd = params[:admin][:password]
+    passwd_confirm = params[:admin][:password_confirmation]
+
+    if passwd.blank? && passwd_confirm.blank?
+      params[:admin] = params[:admin].except(:password, :password_confirmation)
+    end
+
+    params.require(:admin).permit(:name, :email, :password, :password_confirmation, :role)
   end
 end

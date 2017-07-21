@@ -14,7 +14,8 @@ pt-BR:
       admin:
         name: Nome
         email: E-mail
-        encrypted_password: Senha
+        password: Senha
+        password_confirmation: Confirmar Senha
         role: Cargo
       category:
         description: Descrição

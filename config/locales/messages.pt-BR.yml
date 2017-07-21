@@ -1,5 +1,5 @@
 # Aqui ficarão as mensagens do sistema como um tudo
-'pt-BR':
+pt-BR:
   messages:
     confirm: Tem certeza?
     confirm_with: Você deseja realmente excluir (<b>%{item}<b>)?
