@@ -29,14 +29,15 @@
             	<%= f.label :email %>
             	<%= f.text_field :email, class:"form-control", placeholder:"Ex: email@example.com" %>
         	</div>
-            <div class="form-group">
-            <%#= f.collection_radio_buttons :role, options_for_rule, :id, :description  %>
-                <%= f.collection_radio_buttons(:role, options_for_rule, :id, :description) do |b| %>
-                    <div class="radio">
-                        <%= b.label { b.radio_button + b.text } %>
-                    </div>
-                <% end %>
-            </div>
+            <% if policy(@admin).edit? %>
+                <div class="form-group">
+                    <%= f.collection_radio_buttons(:role, options_for_rule, :id, :description) do |b| %>
+                        <div class="radio">
+                            <%= b.label { b.radio_button + b.text } %>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
 
             <div class="form-group">
               <%= f.label :password %>
