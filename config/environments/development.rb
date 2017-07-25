@@ -10,6 +10,11 @@ Rails.application.configure do
   ##Consegui enviar e-mail
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  #Configuração do mailcatcher
+  #config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
+  #config.action_mailer.raise_delivery_errors = false
+
   ##aparecer os logs no Foreman
   $stdout.sync = true
 

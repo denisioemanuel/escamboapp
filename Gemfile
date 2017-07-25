@@ -43,8 +43,6 @@ source 'https://rails-assets.org' do
 
 end
 
-
-
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -90,6 +88,8 @@ group :development do
   gem "rails-erd"
   #A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker'
+  #Mailcatcher - Catches mail and serves it through a dream.
+  gem 'mailcatcher'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
