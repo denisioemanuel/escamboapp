@@ -8,7 +8,14 @@ class Backoffice::SendMailController < ApplicationController
 	end
 
 	def create
-		AdminMailer.send_mail(current_admin, params[:'recipient-text'], params[:'subject-text'], params[:'message-text']).deliver_now
+		begin
+			AdminMailer.send_mail(current_admin, params[:'recipient-text'], params[:'subject-text'], params[:'message-text']).deliver_now
+			@notify_message = t('messages.send_mail_success')
+			@notify_tag = "success"
+		rescue
+			@notify_message = t('messages.send_mail_error')
+			@notify_tag = "error"
+		end
 		respond_to do |format|
 			format.js
 		end

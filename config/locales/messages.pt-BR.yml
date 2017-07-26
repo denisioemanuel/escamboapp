@@ -10,3 +10,5 @@ pt-BR:
     created: Item criado com sucesso!
     updated: Item atualizado com sucesso!
     destroyed: Item excluído com sucesso!
+    send_mail_success: "E-mail enviado com suecesso."
+    send_mail_error: "Não foi possível enviar o e-mail. Tente novamente"
