@@ -1,10 +1,13 @@
-//alert("<%= @admin.email %>");
 $(document).ready(function(){
-	$("#exampleModalLabel").text("Enviando mensagem para <%= @admin.name %>");
-	$("#recipient-name").val("<%= @admin.email %>");
-	$("#sendMailModal").modal()
-	$("#sendMailModal").on('shown.bs.modal', function () {
-  		$('#message-text').focus();
+	let $sendModal = $("#sendMailModal");
+
+	$("#exampleModalLabel").text("<%= I18n.t('labels.send_message_to', name: @admin.name) %>");
+	$("#recipient-text").val("<%= @admin.email %>");
+
+	$sendModal.modal();
+
+	$sendModal.on('shown.bs.modal', function () {
+  		$('#subject-text').focus();
 	});
 
 });

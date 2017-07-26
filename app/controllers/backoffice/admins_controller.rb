@@ -39,11 +39,12 @@ class Backoffice::AdminsController < BackofficeController
   def destroy
   	admin_email = @admin.email
     authorize @admin
-  	if @admin.destroy
-  		redirect_to backoffice_admins_path, notice: "O usuário (#{admin_email}) foi excluído com sucesso!"
-  	else
-  		render :index
-  	end
+    puts "------------------- APAGOU - modal do confirma não funciona -------------------"
+  	# if @admin.destroy
+  	# 	redirect_to backoffice_admins_path, notice: "O usuário (#{admin_email}) foi excluído com sucesso!"
+  	# else
+  	# 	render :index
+  	# end
   end
 
   private
