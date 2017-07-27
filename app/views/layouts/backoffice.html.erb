@@ -53,9 +53,7 @@
 <% end %>
 
 <% if alert %>
-    <script>
-        $.notify("<%= alert %>", "error");
-    </script>
+    <%= javascript_tag "$.notify('#{alert}', 'error');" %>
 <% end %>
 
 </body>
