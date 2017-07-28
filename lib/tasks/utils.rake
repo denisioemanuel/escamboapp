@@ -19,8 +19,8 @@ namespace :utils do
     puts "Cadastrando de ANÚNCIOS"
     10.times do
       Ad.create!(
-        title: Faker::Lorem.setence([2,3,4,5].sample),
-        description: LeroleroGenerator.paragraph(Random.rand(3)),
+        title: Faker::Lorem.sentence([2,3,4,5].sample),
+        description: Faker::Lorem.paragraph,
         member: Member.all.sample,
         category: Category.all.sample
         )
