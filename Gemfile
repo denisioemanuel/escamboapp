@@ -23,12 +23,12 @@ gem 'bootstrap_sb_admin_base_v2'
 
 gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
 gem 'sweet-alert2-rails'
-
 #Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
 gem 'enum_help'
-
 #Minimal authorization through OO design and pure Ruby classes
 gem 'pundit'
+#Integration of RubyMoney - Money with Rails
+gem 'money-rails'
 
 #Source do assets
 source 'https://rails-assets.org' do

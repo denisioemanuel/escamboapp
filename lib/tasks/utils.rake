@@ -17,12 +17,13 @@ namespace :utils do
   desc "Cria Anúcios fake"
   task generate_ads: :environment do
     puts "Cadastrando de ANÚNCIOS"
-    10.times do
+    100.times do
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4,5].sample),
         description: Faker::Lorem.paragraph,
         member: Member.all.sample,
-        category: Category.all.sample
+        category: Category.all.sample,
+        price: "#{Random.rand(500)},#{Random.rand(99)}"
         )
     end
     puts "ANÚNCIOS cadastrados com sucesso"
