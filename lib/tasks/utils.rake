@@ -23,7 +23,8 @@ namespace :utils do
         description: Faker::Lorem.paragraph,
         member: Member.all.sample,
         category: Category.all.sample,
-        price: "#{Random.rand(500)},#{Random.rand(99)}"
+        price: "#{Random.rand(500)},#{Random.rand(99)}",
+        picture: File.new(Rails.root.join('public','images',"#{Random.rand(9)}.jpg"), 'r')
         )
     end
     puts "ANÚNCIOS cadastrados com sucesso"
