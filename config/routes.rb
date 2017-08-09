@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   namespace :site do
     get 'home', to: 'home#index'
+    namespace :profile do
+      resources :deashboard, only: [:index]
+    end
   end
 
   get 'backoffice', to: 'backoffice/dashboard#index'
