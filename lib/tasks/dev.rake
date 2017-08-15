@@ -1,16 +1,16 @@
-namespace :utils do
+namespace :dev do
   images_path = Rails.root.join('public','system')
 
   desc "Executando o settup de desenvolvimento"
-  task setup_dev: :environment do
+  task setup: :environment do
     puts "APAGANDO O BANCO DE DADOS.... #{%x(rake db:drop)}"
     puts "Apagando imagens de public/system #{%x(rm -rf #{images_path})}"
     puts "CRIANDO O BANCO DE DADOS.... #{%x(rake db:create)}"
     puts %x(rake db:migrate)
     puts %x(rake db:seed)
-    puts %x(rake utils:generate_admin)
-    puts %x(rake utils:generate_member)
-    puts %x(rake utils:generate_ads)
+    puts %x(rake dev:generate_admin)
+    puts %x(rake dev:generate_member)
+    puts %x(rake dev:generate_ads)
   end
   desc "Settup de desenvolvimento Executado com Sucesso"
 
@@ -47,10 +47,22 @@ namespace :utils do
   end
 
   ######################################
-  
+
   desc "Cria Anúcios fake"
   task generate_ads: :environment do
     puts "Cadastrando de ANÚNCIOS"
+
+    5.times do
+      Ad.create!(
+        title: Faker::Lorem.sentence([2,3,4,5].sample),
+        description: Faker::Lorem.paragraph,
+        member: Member.first,
+        category: Category.all.sample,
+        price: "#{Random.rand(500)},#{Random.rand(99)}",
+        picture: File.new(Rails.root.join('public','images',"#{Random.rand(9)}.jpg"), 'r')
+        )
+    end
+
     100.times do
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4,5].sample),
