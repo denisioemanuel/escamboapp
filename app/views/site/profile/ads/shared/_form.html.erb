@@ -43,6 +43,17 @@
   </div>
 
   <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :finish_date %>
+        <div class="input-group">
+          <%= f.date_field :finish_date, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-md-8">
       <div class="form-group">
         <%= f.label :picture %> <br/>

@@ -10,6 +10,9 @@ pt-BR:
       member:
         one: Membro
         other: Membros
+      ad:
+        one: Anúcio
+        other: Anúncios
     attributes:
       admin:
         name: Nome
@@ -23,3 +26,10 @@ pt-BR:
         name: Nome
         email: E-mail
         encrypted_password: Senha
+      ad:
+        title: Título
+        category: Categoria
+        price: Preço
+        finish_date: Data de finalização
+        picture: Imagem
+        description: Descrição
