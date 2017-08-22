@@ -17,10 +17,6 @@
     <%= stylesheet_link_tag    'site', media: 'all' %>
     <%= stylesheet_link_tag    'site/profile', media: 'all' %>
 
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'site' %>
-    <%= javascript_include_tag 'site/profile' %>
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -67,6 +63,12 @@
     </div>
     <!-- /#page-content-wrapper -->
   </div>
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
+    <%= javascript_include_tag 'site/profile' %>
+    <%= yield :javascripts %>
+
     <script>
     $("#menu-toggle").click(function(e) {
       e.preventDefault();

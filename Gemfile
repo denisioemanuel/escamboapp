@@ -29,8 +29,10 @@ gem 'enum_help'
 gem 'pundit'
 #Integration of RubyMoney - Money with Rails
 gem 'money-rails'
-#Easy file attachment management for ActiveRecord 
+#Easy file attachment management for ActiveRecord
 gem 'paperclip', '~> 5.0.0'
+#jQuery UI for the Rails asset pipeline
+gem 'jquery-ui-rails'
 
 #Source do assets
 source 'https://rails-assets.org' do
