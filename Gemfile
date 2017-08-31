@@ -38,8 +38,10 @@ gem 'jquery-ui-rails'
 source 'https://rails-assets.org' do
   #Bootstrap
   gem 'rails-assets-bootstrap', '3.3.7'
-  #Notify
-  gem 'rails-assets-notifyjs'
+  #Notify bootstrap-growl
+  gem 'rails-assets-bootstrap.growl'
+  #Animated for bootstrap-growl
+  gem 'rails-assets-animate-css'
   #Wrappers for JavaScript alert(), confirm() and other flexible dialogs using Twitter's bootstrap framework
   gem 'rails-assets-bootbox'
 

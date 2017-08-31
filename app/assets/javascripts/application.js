@@ -12,4 +12,4 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require notifyjs
+//= require bootstrap.growl

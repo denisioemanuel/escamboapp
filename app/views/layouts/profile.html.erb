@@ -75,11 +75,9 @@
       $("#wrapper").toggleClass("toggled");
     });
     </script>
-    <% if notice %>
-      <script>
-        $.notify("<%= notice %>", "success");
-      </script>
-    <% end %>
+
+    <%= render partial:"layouts/shared/notifications" %>
+
 
     <%#= render partial:"layouts/site_shared/footer" %>
     <!-- /.container -->
