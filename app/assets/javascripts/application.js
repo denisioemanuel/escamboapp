@@ -13,3 +13,18 @@
 //= require jquery
 //= require rails-ujs
 //= require bootstrap.growl
+
+/*SPIN*/
+$(document).ready(function() {
+  console.log("document");
+  // Global ajax cursor change
+  $(document)
+    .ajaxStart(function () {
+        $('#global-spin').fadeIn('slow');
+        alert("ajaxStart");
+    })
+    .ajaxStop(function () {
+        $('#global-spin').fadeOut('slow');
+        alert("ajaxStop");
+    });
+});
