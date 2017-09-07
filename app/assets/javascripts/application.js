@@ -16,7 +16,6 @@
 
 /*SPIN*/
 $(document).ready(function() {
-  console.log("document");
   // Global ajax cursor change
   $(document)
     .ajaxStart(function () {
@@ -27,4 +26,15 @@ $(document).ready(function() {
         $('#global-spin').fadeOut('slow');
         alert("ajaxStop");
     });
+
+  $(document).on('ajax:beforeSend', function() {
+    $('#global-spin').fadeIn('slow');
+    console.log("beforeSend");
+  });
+
+  $(document).on('ajax:send', function(xhr) {
+    $('#global-spin').fadeOut('slow');
+    console.log("ajax:send");
+  });
+
 });
