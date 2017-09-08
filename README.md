@@ -1,5 +1,5 @@
 # udemy_escamboapp
-Segundo projeto do curso de Ruby On Rails da Udemy
+Seguindo o projeto do curso de Ruby On Rails Completo da Udemy do professor Jackson Pires
 
 -# README
 -
@@ -9,9 +9,9 @@ Segundo projeto do curso de Ruby On Rails da Udemy
 -Things you may want to cover:
 -
 -* Ruby version
--
+-ruby 2.4.0p0
 -* System dependencies
--
+-Rails 5.1.3
 -* Configuration
 -
 -* Database creation

@@ -33,7 +33,11 @@ gem 'money-rails'
 gem 'paperclip', '~> 5.0.0'
 #jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
+#jquery antigo , mas não é mais necessário pois no rails 5 o jquery é inbutido
 #gem 'jquery-rails'
+gem 'redcarpet'
+#Markdown Lorem Ipsum generator
+gem 'doctor_ipsum'
 
 #Source do assets
 source 'https://rails-assets.org' do
@@ -45,7 +49,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-animate-css'
   #Wrappers for JavaScript alert(), confirm() and other flexible dialogs using Twitter's bootstrap framework
   gem 'rails-assets-bootbox'
-
+  #The safe Markdown parser, reloaded.
   gem 'rails-assets-jquery-ujs'
 
 end
