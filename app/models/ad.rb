@@ -13,6 +13,7 @@ class Ad < ApplicationRecord
   #scope
   scope :descending_order, -> (quantity = 10) { order(created_at: :asc).limit(quantity) }
   scope :to_the, -> (member) { where(member: member) }
+  scope :where_category, -> (id) { where(category: id) }
 
   #paperclip
   has_attached_file :picture, styles: { large: "900x400#", medium: "320x150#", thumb: "100x100#" },
