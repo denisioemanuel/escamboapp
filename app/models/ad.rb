@@ -3,7 +3,7 @@ class Ad < ApplicationRecord
   before_save :markdown_to_html
 
   #Association
-  belongs_to :category
+  belongs_to :category, counter_cache: true
   belongs_to :member
 
   #Validation
