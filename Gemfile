@@ -51,6 +51,10 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootbox'
   #The safe Markdown parser, reloaded.
   gem 'rails-assets-jquery-ujs'
+  #bootstrap-markdown
+  gem 'rails-assets-bootstrap-markdown'
+  #marked
+  gem 'rails-assets-marked'
 
 end
 

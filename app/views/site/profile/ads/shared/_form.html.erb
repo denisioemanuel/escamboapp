@@ -82,20 +82,7 @@
   <div class="col-md-12">
     <div class="form-group">
       <%= f.label :description_markdown %>
-      <%= f.text_area :description_markdown, class: "form-control" , rows: 8 %>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        Pré-Visulização
-      </div>
-      <div class="panel-body">
-        <%= @ad.description.html_safe %>
-      </div>
+      <%= f.text_area :description_markdown, class: "form-control" , rows: 8, data:{provide: "markdown"}%>
     </div>
   </div>
 </div>
