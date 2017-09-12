@@ -38,6 +38,8 @@ gem 'jquery-ui-rails'
 gem 'redcarpet'
 #Markdown Lorem Ipsum generator
 gem 'doctor_ipsum'
+#FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord.
+gem 'friendly_id'
 
 #Source do assets
 source 'https://rails-assets.org' do
