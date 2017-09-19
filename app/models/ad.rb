@@ -11,9 +11,14 @@ class Ad < ApplicationRecord
   validates :price, numericality: { greater_than: 0 }
 
   #scope
-  scope :descending_order, -> (quantity = 10) { order(created_at: :asc).limit(quantity) }
+  scope :descending_order, -> (quantity = 10, page = 1) {
+    order(created_at: :asc).limit(quantity).page(page).per(6)
+  }
   scope :to_the, -> (member) { where(member: member) }
   scope :by_category, -> (id) { where(category: id) }
+  scope :search, -> (term, page = 1) {
+    where("title LIKE lower(?)", "%#{term.downcase}%").page(page).per(6)
+  }
 
   #paperclip
   has_attached_file :picture, styles: { large: "900x400#", medium: "320x150#", thumb: "100x100#" },

@@ -40,6 +40,10 @@ gem 'redcarpet'
 gem 'doctor_ipsum'
 #FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord.
 gem 'friendly_id'
+#ADD: A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari'
+#ADD: i18n for kaminari
+gem 'kaminari-i18n'
 
 #Source do assets
 source 'https://rails-assets.org' do
