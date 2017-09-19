@@ -1,4 +1,6 @@
 class Ad < ApplicationRecord
+  #Constant
+  QTT_PER_PAGE = 6
   #Callbacks
   before_save :markdown_to_html
 
@@ -11,13 +13,13 @@ class Ad < ApplicationRecord
   validates :price, numericality: { greater_than: 0 }
 
   #scope
-  scope :descending_order, -> (quantity = 10, page = 1) {
-    order(created_at: :asc).limit(quantity).page(page).per(6)
+  scope :descending_order, -> (page) {
+    order(created_at: :asc).page(page).per(QTT_PER_PAGE)
   }
   scope :to_the, -> (member) { where(member: member) }
   scope :by_category, -> (id) { where(category: id) }
-  scope :search, -> (term, page = 1) {
-    where("title LIKE lower(?)", "%#{term.downcase}%").page(page).per(6)
+  scope :search, -> (term, page) {
+    where("title LIKE lower(?)", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE)
   }
 
   #paperclip

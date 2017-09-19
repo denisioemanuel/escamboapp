@@ -54,6 +54,13 @@
                         <i class="fa fa-users fa-fw"></i> Administradores
                     <% end %>
                 </li>
+                <%# if Rails.Development? then%>
+                <li>
+                    <%= link_to backoffice_diagrams_path do %>
+                        <i class="fa fa-database fa-fw"></i> Diagramas ER
+                    <% end %>
+                </li>
+                <%# end  %>
             </ul>
         </div>
         <!-- /.sidebar-collapse -->

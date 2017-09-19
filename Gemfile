@@ -45,6 +45,7 @@ gem 'kaminari'
 #ADD: i18n for kaminari
 gem 'kaminari-i18n'
 
+
 #Source do assets
 source 'https://rails-assets.org' do
   #Bootstrap
