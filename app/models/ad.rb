@@ -18,7 +18,9 @@ class Ad < ApplicationRecord
     order(created_at: :asc).page(page).per(QTT_PER_PAGE)
   }
   scope :to_the, -> (member) { where(member: member) }
-  scope :by_category, -> (id) { where(category: id) }
+  scope :by_category, -> (id, page) {
+    where(category: id).page(page).per(QTT_PER_PAGE)
+  }
   scope :search, -> (term, page) {
     where("title LIKE lower(?)", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE)
   }
