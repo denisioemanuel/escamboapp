@@ -1,6 +1,10 @@
 class Ad < ApplicationRecord
   #Constant
   QTT_PER_PAGE = 6
+
+  #Ratyrate
+  ratyrate_rateable "quality"
+
   #Callbacks
   before_save :markdown_to_html
 

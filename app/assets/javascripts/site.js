@@ -3,6 +3,8 @@
 //= require bootstrap
 //= require bootstrap-markdown
 //= require marked
+//= require jquery.raty
+//= require ratyrate
 
 /**
  * Brazilian Portuguese translation for bootstrap-markdown

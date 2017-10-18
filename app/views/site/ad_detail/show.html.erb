@@ -6,8 +6,9 @@
     <p class="card-text">
       <%= @ad.description.html_safe%>
     </p>
-    <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-    4.0 stars
+    <p>
+      <%= rating_for @ad, "quality" %>
+    </p>
   </div>
 </div>
 <br/>

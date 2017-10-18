@@ -44,6 +44,8 @@ gem 'friendly_id'
 gem 'kaminari'
 #ADD: i18n for kaminari
 gem 'kaminari-i18n'
+#ADD: A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
+gem 'ratyrate'
 
 
 #Source do assets

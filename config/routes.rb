@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  post '/rate' => 'rater#create', :as => 'rate'
   namespace :backoffice do
     resources :categories, except: [:destroy, :show]
     resources :admins, except: [:show]
