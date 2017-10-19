@@ -20,11 +20,11 @@ $(document).ready(function() {
   $(document)
     .ajaxStart(function () {
         $('#global-spin').fadeIn('slow');
-        alert("ajaxStart");
+        //alert("ajaxStart");
     })
     .ajaxStop(function () {
         $('#global-spin').fadeOut('slow');
-        alert("ajaxStop");
+        //alert("ajaxStop");
     });
 
   $(document).on('ajax:beforeSend', function() {

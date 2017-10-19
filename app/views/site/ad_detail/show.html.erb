@@ -7,7 +7,12 @@
       <%= @ad.description.html_safe%>
     </p>
     <p>
-      <%= rating_for @ad, "quality" %>
+      <div class="well well-sm">
+        <div class="ratings">
+          <p class="pull-right"> <%= @ad.comment.count %> Comentários </p>
+          <%= rating_for @ad, "quality" %>
+        </div>
+      </div>
     </p>
   </div>
 </div>
@@ -23,10 +28,7 @@
   </div>
 <% else %>
   <div class="text-right">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg btn-success" disabled="disabled" data-toggle="modal" data-target="#myModal">
-      Adicionar um comentário
-    </button>
+    <%= link_to "Efetuar Login", new_member_session_path, class: "btn btn-primary btn-lg btn-success" %>
   </div>
 <% end %>
 
