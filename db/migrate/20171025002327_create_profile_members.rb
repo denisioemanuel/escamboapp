@@ -4,6 +4,7 @@ class CreateProfileMembers < ActiveRecord::Migration[5.1]
       t.string :first_name
       t.string :second_name
       t.date :birthdate
+      t.references :member, index: true, foreign_key: true
 
       t.timestamps
     end
