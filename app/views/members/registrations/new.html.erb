@@ -28,12 +28,22 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="firstname" class="col-md-3 control-label">First Name</label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" name="firstname" placeholder="First Name">
+          <%= f.fields_for :profile_member do |profile_member| %>
+            <div class="form-group">
+              <%= profile_member.label :first_name , class:"col-md-3 control-label"%>
+              <div class="col-md-9">
+                <%= profile_member.text_field :first_name, class:"form-control", placeholder:"First Name" %>
+              </div>
             </div>
-          </div>
+
+            <div class="form-group">
+              <%= profile_member.label :second_name , class:"col-md-3 control-label"%>
+              <div class="col-md-9">
+                <%= profile_member.text_field :second_name, class:"form-control", placeholder:"Second Name" %>
+              </div>
+            </div>
+          <% end %>
+          
           <div class="form-group">
             <%= f.label :password , for:"password", class:"col-md-3 control-label"%>
             <div class="col-md-9">
