@@ -18,7 +18,7 @@ pt-BR:
         name: Nome
         email: E-mail
         password: Senha
-        password_confirmation: Confirmar Senha
+        password_confirmation: Confirmação de Senha
         role: Cargo
       category:
         description: Descrição
@@ -26,6 +26,8 @@ pt-BR:
         name: Nome
         email: E-mail
         encrypted_password: Senha
+        password: Senha
+        password_confirmation: Confirmação de Senha
       ad:
         title: Título
         category: Categoria
@@ -33,3 +35,7 @@ pt-BR:
         finish_date: Data de finalização
         picture: Imagem
         description: Descrição
+      profile_member:
+        first_name: Primeiro Nome
+        second_name: Segundo Nome
+        birthdate: Nascimento
