@@ -118,3 +118,9 @@
     </div>
   </div>
 </div>
+
+<% flash.each do |key, value| %>
+    <% if alert %>
+      <%= javascript_tag "$.notify({ message: '#{value}' }, { type:'danger' , placement: {from: 'top',align: 'center'}});" %>
+    <% end %>
+<% end %>

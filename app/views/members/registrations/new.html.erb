@@ -12,15 +12,6 @@
           class:"form-horizontal", role: "form"
           }) do |f| %>
 
-          <% unless devise_error_messages!.blank? %>
-          <div id="signupalert" style="display:block" class="alert alert-danger">
-            <p>
-              <%= devise_error_messages! %>
-            </p>
-            <span></span>
-          </div>
-          <% end %>
-
           <div class="form-group">
             <%= f.label :email , class:"col-md-3 control-label"%>
             <div class="col-md-9">
@@ -43,7 +34,7 @@
               </div>
             </div>
           <% end %>
-          
+
           <div class="form-group">
             <%= f.label :password , for:"password", class:"col-md-3 control-label"%>
             <div class="col-md-9">
@@ -73,3 +64,9 @@
     </div>
   </div>
 </div>
+<% unless devise_error_messages!.blank? %>
+  <% resource.errors.full_messages.each do |message| %>
+    <%= javascript_tag "$.notify({ message: '#{message}' },
+    { type:'danger' , placement: {from: 'top',align: 'center'}});" %>
+  <% end %>
+<% end %>
