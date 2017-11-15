@@ -97,6 +97,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   #Gem dixa a mensagem de erro mais amigável
   gem 'better_errors'
+  #Preview mail in the browser instead of sending.
+  gem "letter_opener"
 end
 
 group :development do
@@ -113,7 +115,7 @@ group :development do
   #A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker'
   #Mailcatcher - Catches mail and serves it through a dream.
-  gem 'mailcatcher'
+  #gem 'mailcatcher'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
