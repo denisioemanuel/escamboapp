@@ -7,7 +7,7 @@ Rails.application.configure do
   #Corrigindo erro do Web console
   config.web_console_whitelited_ips = ENV['TRUSTED_IP']
 
-  ##Consegui enviar e-mail
+  #Device Config : Consegui enviar e-mail
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   #Then, in your environment config file, let Paperclip know to look there by adding that directory to its path.
