@@ -29,6 +29,8 @@ class Ad < ApplicationRecord
     where("title LIKE lower(?)", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE)
   }
 
+  scope :random, -> (quantity) { limit(quantity).order("RANDOM()")}
+
   #paperclip
   has_attached_file :picture, styles: { large: "900x400#", medium: "320x150#", thumb: "100x100#" },
   default_url: "/images/:style/missing.png"
@@ -36,6 +38,14 @@ class Ad < ApplicationRecord
 
   #money ruby
   monetize :price_cents
+
+  def second
+    self[1]
+  end
+
+  def third
+   self[2]
+  end
 
   private
   def markdown_to_html
