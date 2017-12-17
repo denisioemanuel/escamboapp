@@ -46,5 +46,5 @@ Está usando a versão 14.14 Distrib 5.7.20, for Linux (x86_64)
 # udemy_escamboapp
 
 
--# Considerações finais
+# Considerações finais
 >> [Ruby on Rails - Curso Completo](http://jacksonpires.blogspot.com.br/2016/05/novo-curso-de-rails-na-udemy.html)
