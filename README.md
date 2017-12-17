@@ -32,6 +32,17 @@ libsqlite3-dev libtool libxml2-dev
 libxslt-dev libxslt1-dev sqlite3 curl vim git
 
 
+## NGINX
+# Comandos básicos
+sudo systemctl stop nginx
+sudo systemctl start nginx
+sudo systemctl restart nginx
+sudo systemctl disable nginx
+sudo systemctl enable nginx
+
+# Mysql
+Está usando a versão 14.14 Distrib 5.7.20, for Linux (x86_64)
+
 # udemy_escamboapp
 
 
