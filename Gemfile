@@ -114,12 +114,11 @@ group :development do
   gem "rails-erd"
   #A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker'
-  #Mailcatcher - Catches mail and serves it through a dream.
-  #gem 'mailcatcher'
+
   gem 'capistrano'#, '~> 3.10'
   gem 'capistrano-bundler'#, '~> 1.2'
   gem 'capistrano-rails'#, '~> 1.2'
-  
+
 end
 
 group :production do
