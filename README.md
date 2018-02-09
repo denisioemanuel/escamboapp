@@ -21,6 +21,7 @@ sudo apt-get install imagemagick libmagickwand-dev
 sudo apt-get update
 sudo apt-get install graphviz
 ```
+* Capistrano - Apenas para Ambiente de Desenvolvimento
 
 ## Pacotes essenciais 
 sudo apt-get install -y build-essential

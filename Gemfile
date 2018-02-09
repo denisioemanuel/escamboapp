@@ -116,7 +116,18 @@ group :development do
   gem 'faker'
   #Mailcatcher - Catches mail and serves it through a dream.
   #gem 'mailcatcher'
+  gem 'capistrano'#, '~> 3.10'
+  gem 'capistrano-bundler'#, '~> 1.2'
+  gem 'capistrano-rails'#, '~> 1.2'
+  # Capfile
+  require 'capistrano/rvm'
+end
+
+group :production do
+  gem 'mysql2', '~> 0.3.18' 
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'capistrano-rvm'
