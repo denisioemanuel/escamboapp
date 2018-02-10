@@ -21,7 +21,9 @@ module UdemyEscamboapp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
     config.i18n.default_locale = :"pt-BR"
-    config.web_console.whitelisted_ips = '10.0.2.2'
+    if Rails.env.development?
+      config.web_console.whitelisted_ips = '10.0.2.2'
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
