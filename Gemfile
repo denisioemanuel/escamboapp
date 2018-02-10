@@ -36,37 +36,8 @@ gem 'jquery-ui-rails'
 #jquery antigo , mas não é mais necessário pois no rails 5 o jquery é inbutido
 #gem 'jquery-rails'
 gem 'redcarpet'
-#Markdown Lorem Ipsum generator
-gem 'doctor_ipsum'
 #FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord.
 gem 'friendly_id'
-#ADD: A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
-gem 'kaminari'
-#ADD: i18n for kaminari
-gem 'kaminari-i18n'
-#ADD: A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
-gem 'ratyrate'
-
-
-#Source do assets
-source 'https://rails-assets.org' do
-  #Bootstrap
-  gem 'rails-assets-bootstrap', '3.3.7'
-  #Notify bootstrap-growl
-  gem 'rails-assets-bootstrap.growl'
-  #Animated for bootstrap-growl
-  gem 'rails-assets-animate-css'
-  #Wrappers for JavaScript alert(), confirm() and other flexible dialogs using Twitter's bootstrap framework
-  gem 'rails-assets-bootbox'
-  #The safe Markdown parser, reloaded.
-  gem 'rails-assets-jquery-ujs'
-  #bootstrap-markdown
-  gem 'rails-assets-bootstrap-markdown'
-  #marked
-  gem 'rails-assets-marked'
-
-end
-
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -89,8 +60,35 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+#ADD: A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari'
+#ADD: i18n for kaminari
+gem 'kaminari-i18n'
+#ADD: A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
+gem 'ratyrate'
+#ADD: A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker'
+#ADD: arkdown Lorem Ipsum generator
+gem 'doctor_ipsum'
+
+#Source do assets
+source 'https://rails-assets.org' do
+  #Bootstrap
+  gem 'rails-assets-bootstrap', '3.3.7'
+  #Notify bootstrap-growl
+  gem 'rails-assets-bootstrap.growl'
+  #Animated for bootstrap-growl
+  gem 'rails-assets-animate-css'
+  #Wrappers for JavaScript alert(), confirm() and other flexible dialogs using Twitter's bootstrap framework
+  gem 'rails-assets-bootbox'
+  #The safe Markdown parser, reloaded.
+  gem 'rails-assets-jquery-ujs'
+  #bootstrap-markdown
+  gem 'rails-assets-bootstrap-markdown'
+  #marked
+  gem 'rails-assets-marked'
+
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -112,12 +110,12 @@ group :development do
   gem 'better_errors'
   #Gerar um pdf da entiddade e relacionamento da aplicação
   gem "rails-erd"
-  #A library for generating fake data such as names, addresses, and phone numbers.
-  gem 'faker'
+
 
   gem 'capistrano'#, '~> 3.10'
   gem 'capistrano-bundler'#, '~> 1.2'
   gem 'capistrano-rails'#, '~> 1.2'
+  gem 'capistrano-rvm'
 
 end
 
@@ -127,5 +125,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'capistrano-rvm'

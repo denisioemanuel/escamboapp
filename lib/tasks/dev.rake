@@ -4,7 +4,9 @@ namespace :dev do
   desc "Executando o settup de desenvolvimento"
   task setup: :environment do
     puts "APAGANDO O BANCO DE DADOS.... #{%x(rake db:drop)}"
-    puts "Apagando imagens de public/system #{%x(rm -rf #{images_path})}"
+    if Rails.env.development?
+      puts "Apagando imagens de public/system #{%x(rm -rf #{images_path})}"
+    end
     puts "CRIANDO O BANCO DE DADOS.... #{%x(rake db:create)}"
     puts %x(rake db:migrate)
     puts %x(rake db:seed)
