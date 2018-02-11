@@ -46,7 +46,7 @@ sudo systemctl enable nginx
 ## Mysql
 Está usando a versão 14.14 Distrib 5.7.20, for Linux (x86_64)
 
-##Unicorn ([GEM](https://bogomips.org/unicorn/))
+## Unicorn - [GEM](https://bogomips.org/unicorn/)
 * Gemfile
 ```
 group :production do
