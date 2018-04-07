@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     resources :send_mail, only: [:edit, :create]
   end
 
+  namespace :checkout do
+    resources :payments , only: [:create]
+  end
+
   namespace :site do
     get 'home', to: 'home#index'
     get 'search', to: 'search#ads'

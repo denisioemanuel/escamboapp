@@ -2,7 +2,13 @@
   <%= image_tag @ad.picture.url(:large), class: "card-img-top img-fluid"%>
   <div class="card-body">
     <h3 class="card-title"><%= @ad.title%></h3>
+
     <h4><%= humanized_money_with_symbol @ad.price %></h4>
+    <% if member_signed_in? %>       
+        <%= link_to "Comprar", '#', class: "btn btn-primary btn-lg btn-success" %>
+    <% else %>
+        <%= link_to "Efetuar Login para comprar", new_member_session_path, class: "btn btn-primary btn-lg" %>
+    <% end %>
     <p class="card-text">
       <%= @ad.description.html_safe%>
     </p>

@@ -33,9 +33,9 @@ class Ad < ApplicationRecord
     # Rails.env.production?
     #   limit(quantity).order("RAND()") #MySql
     # else
-    #   limit(quantity).order("RANDOM()") #SQLite
+       limit(quantity).order("RANDOM()") #SQLite
     # end
-    limit(quantity).order("RAND()") #MySql
+    #limit(quantity).order("RAND()") #MySql
   }
 
   #paperclip

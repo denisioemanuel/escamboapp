@@ -31,7 +31,7 @@ namespace :dev do
         role: [0,0,1,1,1].sample
   			)
   	end
-  	puts "ADMINISTRADORES cadastrados com sucesso"
+    puts "*****   ADMINISTRADORES cadastrados com sucesso   *****"
   end
 
   ######################################
@@ -51,7 +51,7 @@ namespace :dev do
       member.profile_member.second_name = Faker::Name.last_name
       member.save!
     end
-    puts "MEMBROS cadastrados com sucesso"
+    puts "****  MEMBROS cadastrados com sucesso  *****"
   end
 
   ######################################
@@ -73,19 +73,19 @@ namespace :dev do
         )
     end
 
-    # 100.times do
-    #   Ad.create!(
-    #     title: Faker::Lorem.sentence([2,3,4,5].sample),
-    #     description_markdown: markdown_fake,
-    #     description_short: Faker::Lorem.sentence([2,3].sample),
-    #     member: Member.all.sample,
-    #     category: Category.all.sample,
-    #     price: "#{Random.rand(500)},#{Random.rand(99)}",
-    #     finish_date: Date.today + Random.rand(90),
-    #     picture: File.new(Rails.root.join('public','images',"#{Random.rand(9)}.jpg"), 'r')
-    #     )
-    # end
-    puts "ANÚNCIOS cadastrados com sucesso"
+    100.times do
+      Ad.create!(
+        title: Faker::Lorem.sentence([2,3,4,5].sample),
+        description_markdown: markdown_fake,
+        description_short: Faker::Lorem.sentence([2,3].sample),
+        member: Member.all.sample,
+        category: Category.all.sample,
+        price: "#{Random.rand(500)},#{Random.rand(99)}",
+        finish_date: Date.today + Random.rand(90),
+        picture: File.new(Rails.root.join('public','images',"#{Random.rand(9)}.jpg"), 'r')
+        )
+    end
+    puts "****  ANÚNCIOS cadastrados com sucesso  *****"
   end
 
   def markdown_fake
@@ -105,7 +105,7 @@ namespace :dev do
         )
       end
     end
-    puts "COMENTÁRIOS cadastrados com sucesso"
+    puts "****  COMENTÁRIOS cadastrados com sucesso  *****"
   end
 
 end
