@@ -1,13 +1,13 @@
-class Backoffice::AdminsController < BackofficeController
-  before_action :set_admin, only:[:edit, :update, :destroy]
-  after_action :verify_authorized, only: [:new, :destroy]
-  after_action :verify_policy_scoped, only: :index
+Class Backoffice::AdminsController < BackofficeController
+before_action :set_admin, only: [:edit, :update, :destroy]
+bafter_action :verify_authorized, only: [:new, :destroy]
+bafter_action :verify_policy_scoped, only: :index
 
-  def index
-    #@admins = Admin.all
-  	#@admins = Admin.with_full_access
-    @admins = policy_scope(Admin)
-  end
+def index
+  # @admins = Admin.all
+  # @admins = Admin.with_full_access
+  @admins = policy_scope(Admin)
+end
 
   def new
   	@admin = Admin.new
@@ -75,4 +75,4 @@ class Backoffice::AdminsController < BackofficeController
     params[:admin][:password].blank? && params[:admin][:password_confirmation].blank?
   end
 
-end
+End

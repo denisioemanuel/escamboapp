@@ -18,18 +18,25 @@ class Ad < ApplicationRecord
   validates :price, numericality: { greater_than: 0 }
 
   #scope
-  scope :descending_order, -> (page) {
+  scope :descending_order, ->(page){
     order(created_at: :asc).page(page).per(QTT_PER_PAGE)
   }
-  scope :to_the, -> (member) { where(member: member) }
-  scope :by_category, -> (id, page) {
+  scope :to_the, ->(member){ where(member: member) }
+  scope :by_category, ->(id,page) {
     where(category: id).page(page).per(QTT_PER_PAGE)
   }
   scope :search, -> (term, page) {
     where("title LIKE lower(?)", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE)
   }
 
-  scope :random, -> (quantity) { limit(quantity).order("RANDOM()")}
+  scope :random, -> (quantity) { 
+    # Rails.env.production?
+    #   limit(quantity).order("RAND()") #MySql
+    # else
+    #   limit(quantity).order("RANDOM()") #SQLite
+    # end
+    limit(quantity).order("RAND()") #MySql
+  }
 
   #paperclip
   has_attached_file :picture, styles: { large: "900x400#", medium: "320x150#", thumb: "100x100#" },

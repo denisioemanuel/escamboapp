@@ -63,7 +63,7 @@ namespace :dev do
     5.times do
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4,5].sample),
-        description_markdown: markdown_fake,
+        description_markdown: Faker::Lorem.sentence([2,3].sample), #markdown_fake,
         description_short: Faker::Lorem.sentence([2,3].sample),
         member: Member.first,
         category: Category.all.sample,
@@ -73,18 +73,18 @@ namespace :dev do
         )
     end
 
-    100.times do
-      Ad.create!(
-        title: Faker::Lorem.sentence([2,3,4,5].sample),
-        description_markdown: markdown_fake,
-        description_short: Faker::Lorem.sentence([2,3].sample),
-        member: Member.all.sample,
-        category: Category.all.sample,
-        price: "#{Random.rand(500)},#{Random.rand(99)}",
-        finish_date: Date.today + Random.rand(90),
-        picture: File.new(Rails.root.join('public','images',"#{Random.rand(9)}.jpg"), 'r')
-        )
-    end
+    # 100.times do
+    #   Ad.create!(
+    #     title: Faker::Lorem.sentence([2,3,4,5].sample),
+    #     description_markdown: markdown_fake,
+    #     description_short: Faker::Lorem.sentence([2,3].sample),
+    #     member: Member.all.sample,
+    #     category: Category.all.sample,
+    #     price: "#{Random.rand(500)},#{Random.rand(99)}",
+    #     finish_date: Date.today + Random.rand(90),
+    #     picture: File.new(Rails.root.join('public','images',"#{Random.rand(9)}.jpg"), 'r')
+    #     )
+    # end
     puts "ANÚNCIOS cadastrados com sucesso"
   end
 

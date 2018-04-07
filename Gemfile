@@ -117,6 +117,7 @@ group :development do
   gem 'capistrano-rails'#, '~> 1.2'
   gem 'capistrano-rvm'
   gem 'capistrano3-unicorn'
+  gem 'mysql2', '~> 0.3.18'
 
 end
 
