@@ -5,7 +5,8 @@
 
     <h4><%= humanized_money_with_symbol @ad.price %></h4>
     <% if member_signed_in? %>       
-        <%= link_to "Comprar", '#', class: "btn btn-primary btn-lg btn-success" %>
+        <%= link_to "Comprar", checkout_payments_path, class: "btn btn-primary btn-lg btn-success", 
+        data: {confirm:'Deseja realmente comprar esse produto ?'}, method: :post %>
     <% else %>
         <%= link_to "Efetuar Login para comprar", new_member_session_path, class: "btn btn-primary btn-lg" %>
     <% end %>

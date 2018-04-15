@@ -1,23 +1,26 @@
 class Ad < ApplicationRecord
-  #Constant
+  # Constant
   QTT_PER_PAGE = 6
 
-  #Ratyrate
+  # Ratyrate
   ratyrate_rateable "quality"
 
-  #Callbacks
+  # Callbacks
   before_save :markdown_to_html
 
-  #Association
+  # ENUM
+  enum status: [:active, :processing, :sold]
+
+  # Association
   belongs_to :category, counter_cache: true
   belongs_to :member
   has_many :comment
 
-  #Validation
+  # Validation
   validates :title, :category, :finish_date, :picture, :description_markdown, :description_short, presence: true
   validates :price, numericality: { greater_than: 0 }
 
-  #scope
+  # scope
   scope :descending_order, ->(page){
     order(created_at: :asc).page(page).per(QTT_PER_PAGE)
   }
@@ -33,9 +36,9 @@ class Ad < ApplicationRecord
     # Rails.env.production?
     #   limit(quantity).order("RAND()") #MySql
     # else
-       limit(quantity).order("RANDOM()") #SQLite
+    limit(quantity).order("RANDOM()") #SQLite
     # end
-    #limit(quantity).order("RAND()") #MySql
+    # limit(quantity).order("RAND()") #MySql
   }
 
   #paperclip
@@ -51,10 +54,11 @@ class Ad < ApplicationRecord
   end
 
   def third
-   self[2]
+    self[2]
   end
 
   private
+
   def markdown_to_html
     options = {
       filter_html: true,

@@ -13,6 +13,8 @@
 //= require jquery
 //= require rails-ujs
 //= require bootstrap.growl
+//= require sweetalert2
+//= require sweet-alert2-rails
 
 /*SPIN*/
 $(document).ready(function() {

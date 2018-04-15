@@ -1,9 +1,6 @@
 //= require bootstrap_sb_admin_base_v2
 // require bootbox
 
-//= require sweetalert2
-//= require sweet-alert2-rails
-
 
 // $.rails.allowAction = function(element) {
 //   var message = element.attr('data-confirm');
